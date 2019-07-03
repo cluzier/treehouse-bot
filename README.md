@@ -1,6 +1,7 @@
 # treehouse-bot
 
 **Bot features
+
 -Equipped with moderation. (kick, warn, mute and ban)
 
 -Has a command in which you can check the amount of bans, kicks, warns, and mutes a staff member has. (To keep track of how much they actually moderate.)
