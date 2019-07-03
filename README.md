@@ -1,6 +1,6 @@
 # treehouse-bot
 
-**Bot features
+** Bot features
 
 -Equipped with moderation. (kick, warn, mute and ban)
 
