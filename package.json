@@ -1,8 +1,8 @@
 {
-  "name": "spark",
+  "name": "Treehouse",
   "version": "1.0.2",
   "description": "A multifunctional bot with several tools that allow for an easier and more in depth usage of Discord.",
-  "main": "spark.js",
+  "main": "index.js",
   "dependencies": {
     "chalk": "^2.4.1",
     "discord.js": "^11.3.2",
@@ -24,10 +24,10 @@
     "discord",
     "bot"
   ],
-  "author": "Ghoul#4058",
+  "author": "gonzo#3813",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Theraneatic/Spark/issues"
+    "url": "https://github.com/cluzier/treehouse-bot/issues"
   },
-  "homepage": "https://github.com/Theraneatic/Spark#readme"
+  "homepage": "https://github.com/cluzier/treehouse-bot#readme"
 }
