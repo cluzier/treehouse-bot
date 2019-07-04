@@ -1,17 +1,32 @@
 {
-  "name": "treehouse-bot",
-  "version": "1.3.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
+  "name": "spark",
+  "version": "1.0.2",
+  "description": "A multifunctional bot with several tools that allow for an easier and more in depth usage of Discord.",
+  "main": "spark.js",
   "dependencies": {
-    "discord.js": "^11.4.2",
-    "dotenv": "^8.0.0",
-    "request": "2.81.0"
+    "chalk": "^2.4.1",
+    "discord.js": "^11.3.2",
+    "humanize": "0.0.9",
+    "nodemon": "^1.17.5",
+    "performance-now": "^2.1.0",
+    "pretty-bytes": "^4.0.2"
   },
-  "devDependencies": {
-    "nodemon": "^1.18.9"
-  }
+  "devDependencies": {},
+  "scripts": {
+    "test": "ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Theraneatic/Spark.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Ghoul#4058",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Theraneatic/Spark/issues"
+  },
+  "homepage": "https://github.com/Theraneatic/Spark#readme"
 }

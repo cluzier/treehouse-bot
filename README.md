@@ -17,3 +17,5 @@
 ..* A command to report members that will immediately get sent to a channel only staff have access to would also be greatly appreciated. Should follow a [prefix][report][@user][reason] format. The message should be auto deleted wherever it is sent, but message saying their report has been sent can stay.
 
 ..* Timer for mute / tempban timer
+
+..* Giveaways
