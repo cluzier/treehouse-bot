@@ -18,20 +18,26 @@ exports.run = (client, message, args) => {
     "Returns info about the bot, including uptime and a user count.")
   .addField("help",
     "Returns information about bot commands.")
+  .addField("bugreport",
+    "Submit a bug report for review. Example: >bugreport (reason)")
   .addField("warn",
     "Warns a user. Available to those able to kick users.")
   .addField("ban",
     "Bans a user. Available to those able to ban users.")
+  .addField("unban",
+    "Unban a user.")
   .addField("kick",
     "Kicks a user. Available to those able to kick users.")
+  .addField("tempmute",
+    "Mute a user for a specified amount of time.")
   .addField("purge",
     "Deletes a specified amount of messages. Available to those able to delete messages.")
   .addField("serverinfo",
     "Displays info about a server.")
+  .addField("userinfo",
+    "Displays info about a user.")
   .addField("softban",
     "Softbans a user, deleting messages from them for 7 days, then allowing them to immediately rejoin. Available to those able to ban users.")
-  .addField("unban",
-    "Unbans a user. Available to those able to ban users.")
   .setTimestamp()
   message.channel.send(embed);
 };

@@ -1,16 +1,26 @@
 {
-  "name": "Treehouse",
+  "name": "treehouse",
   "version": "1.0.2",
   "description": "A multifunctional bot with several tools that allow for an easier and more in depth usage of Discord.",
   "main": "index.js",
   "dependencies": {
+    "@quantiom/pagemenu": "^2.0.7",
     "chalk": "^2.4.1",
     "discord.js": "^11.3.2",
+    "fast-html-parser": "^1.0.1",
     "humanize": "0.0.9",
+    "klasa": "^0.4.0",
+    "lowdb": "^1.0.0",
     "nodemon": "^1.17.5",
+    "parse-ms": "^2.1.0",
     "performance-now": "^2.1.0",
     "pretty-bytes": "^4.0.2",
-    "request": "2.81.0"
+    "profanities": "^2.11.0",
+    "quick.db": "^7.0.0-b21",
+    "request": "2.81.0",
+    "steam-provider": "^0.3.2",
+    "unfluff": "^3.2.0",
+    "urban": "^0.3.2"
   },
   "devDependencies": {},
   "scripts": {

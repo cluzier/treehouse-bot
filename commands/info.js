@@ -41,6 +41,7 @@ exports.run = (client, message, args) => {
     "Chris Hansenᶠʳᵒᵐ ᴰᵃᵗᵉˡⁱⁿᵉ ᴺᴮᶜ#2020 \n Krymena#0001 \n 𝒥𝑒𝓁𝓁𝒾~#0666  \n MustardPie#9999 \n tyler#7157 \n StreetCorner#9082 \n stickilas#1188 \n ada#0690 \n ZkyliHokageXX#7015 \n Distilled Delusion#2494", true)
   .addField("Total Guilds Serving",
     `${client.guilds.size}`, true)
+  .setFooter("coded by gonzo#3813")
   .setTimestamp()
   message.channel.send(embed);
   };

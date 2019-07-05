@@ -14,16 +14,9 @@ exports.run = (client, message, args) => {
   .setColor(randomColor())
   .addField("eval",
     "Evaluates a message as JS code.")
-  .addField("prefix",
-    "Changes global prefix in config file.")
-  .addField("reload",
-    "Reloads a module.")
   .addField("shutdown",
     "Shuts the bot down.")
-  .addField("restart",
-    "Restarts the bot.")
-  .addField("setstatus",
-    "Sets the bot's status.")
+  .setFooter("coded by gonzo#3813")
   .setTimestamp()
   message.channel.send(embed);
 };

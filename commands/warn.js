@@ -1,38 +1,43 @@
-const n = require("../n.json");
-const human = require('humanize');
-const Discord = require('discord.js');
-exports.run = (client, message, args) => {
-   if (!message.member.hasPermission("KICK_MEMBERS") && message.author.id !== n.oID) {
-     message.channel.send("You lack the permission(s): Kick Members.");
-   } else {
-   let time = new Date();
-   function amPm() {
-     if (time.getHours() >= 11) {
-       return "PM";
-     } else return "AM";
-   }
-   if (message.content.startsWith(n.prefix + "warn")) {
-     var testCont = message.content.split(" ");
-     var content = message.content.split(" ").slice(2).join(' ');
-     if (message.mentions.users.size < 1) {
-       message.channel.send("You must provide a user to warn!");
-     } else if (testCont.length <= 2) {
-       message.channel.send("Please provide a reason for the warning.");
-     } else {
-     var embed = new Discord.RichEmbed()
-     .setTitle("Warning")
-     .setAuthor(message.author.username + "#" + message.author.discriminator, `${message.author.avatarURL}`)
-     .setDescription("Warning issued to " + message.mentions.users.first().username + ".")
-     .addField("Time",
-       `Warning occured at ${human.date('m-d-y | h:i:s', new Date())} ${amPm()}`)
-     .addField("Moderator",
-       `Warning issued by ${message.author.username}#${message.author.discriminator}`)
-     .addField("Reason",
-       `${content}`)
-     .setColor("#FFA500")
-     .setTimestamp()
-     message.channel.send(embed);
-     }
-   }
-  }
+const Discord = require("discord.js");
+const fs = require("fs");
+const ms = require("ms");
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+
+module.exports.run = async (bot, message, args) => {
+  message.delete();
+
+  if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have `KICK_MEMBERS` permissions.");
+  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
+  if(wUser === message.author) return message.channel.send("Are you retarted? Why do you wanna warn yourself?")
+  if(!wUser) return message.reply("Couldn't find the user.");
+  let reason = args.join(" ").slice(22);
+if(!reason) return message.channel.send("Please provide a reason!")
+  if(!warns[wUser.id]) warns[wUser.id] = {
+    warns: 0
+  };
+
+  warns[wUser.id].warns++;
+
+  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    if (err) console.log(err)
+  });
+
+  let warnEmbed = new Discord.RichEmbed()
+  .setTitle("Warn")
+  .setColor("#fc6400")
+  .addField("User", `${wUser.user.tag}`)
+  .addField("Moderator", `${message.author.tag}`)
+  .addField("Number of Warnings", warns[wUser.id].warns)
+  .addField("Reason", `${reason ? reason : "None."}`);
+
+  let warnchannel = message.guild.channels.find(`name`, "mod-logs");
+  if(!warnchannel) return message.channel.send("Couldn't find `mod-log` channel**");
+  warnchannel.send(warnEmbed);
+  message.channel.send("That user has been warnt.**")
+
+  
+}
+
+module.exports.help = {
+  name: "warn"
 }
