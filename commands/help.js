@@ -38,6 +38,7 @@ exports.run = (client, message, args) => {
     "Displays info about a user.")
   .addField("softban",
     "Softbans a user, deleting messages from them for 7 days, then allowing them to immediately rejoin. Available to those able to ban users.")
+  .setFooter("coded by gonzo#3813")
   .setTimestamp()
   message.channel.send(embed);
 };
