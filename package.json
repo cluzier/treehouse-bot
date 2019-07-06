@@ -1,6 +1,6 @@
 {
   "name": "treehouse",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A multifunctional bot with several tools that allow for an easier and more in depth usage of Discord.",
   "main": "index.js",
   "dependencies": {
