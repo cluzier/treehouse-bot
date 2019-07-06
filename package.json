@@ -9,6 +9,7 @@
     "cryptiles": ">=4.1.2",
     "discord.js": "^11.3.2",
     "fast-html-parser": "^1.0.1",
+    "hoek": ">=4.2.1",
     "humanize": "0.0.9",
     "klasa": "^0.4.0",
     "lowdb": "^1.0.0",
