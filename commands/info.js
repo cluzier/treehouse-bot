@@ -2,6 +2,8 @@ const human = require('humanize');
 const bytes = require('pretty-bytes');
 const Discord = require('discord.js');
 const n = require('../n.json');
+const version = require('../n.json');
+
 exports.run = (client, message, args) => {
   if(message.author.bot) return;
   function msToTime(duration) {
@@ -41,8 +43,8 @@ exports.run = (client, message, args) => {
     "Chris Hansenᶠʳᵒᵐ ᴰᵃᵗᵉˡⁱⁿᵉ ᴺᴮᶜ#2020 \n Krymena#0001 \n 𝒥𝑒𝓁𝓁𝒾~#0666  \n MustardPie#9999 \n tyler#7157 \n StreetCorner#9082 \n stickilas#1188 \n ada#0690 \n ZkyliHokageXX#7015 \n Distilled Delusion#2494", true)
   .addField("Total Guilds Serving",
     `${client.guilds.size}`, true)
-  .addField("Extras",
-    "ps: if ur reading this ur def gay bro. fuck off")
+  .addField("Version",
+    `${n.version}`)
   .setFooter("coded by gonzo#3813")
   .setTimestamp()
   message.channel.send(embed);

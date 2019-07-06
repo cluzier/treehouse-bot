@@ -10,7 +10,6 @@ exports.run = (client, message, args) => {
         title: "Help | Commands - Page 1",
         thumbnail: `${client.user.avatarURL}`,
         color: "66cdaa", // green
-        footer: "coded by gonzo#3813",
         fields: [
           {
             name: "ping",
@@ -45,7 +44,6 @@ exports.run = (client, message, args) => {
         title: "Help | Commands - Page 2",
         thumbnail: `${client.user.avatarURL}`,
         color: "66cdaa", // green
-        footer: "coded by gonzo#3813",
         fields: [
           {
             name: "ban",
@@ -79,7 +77,6 @@ exports.run = (client, message, args) => {
         title: "Help | Commands - Page 3",
         thumbnail: `${client.user.avatarURL}`,
         color: "66cdaa", // green
-        footer: "coded by gonzo#3813",
         fields: [
           {
             name: "serverinfo",

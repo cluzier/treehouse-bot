@@ -20,24 +20,30 @@
     "profanities": "^2.11.0",
     "quick.db": "^7.0.0-b21",
     "request": "2.81.0",
+    "sqlite": "^3.0.3",
     "steam-provider": "^0.3.2",
     "unfluff": "^3.2.0",
     "urban": "^0.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "replace-in-file": "^3.4.4"
+  },
   "scripts": {
-    "test": "ping"
+    "test": "ping",
+    "build": "npm run tickVersion",
+    "tickVersion": "npm version patch && node version.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Theraneatic/Spark.git"
+    "url": "git+https://github.com/cluzier/treehouse-bot.git"
   },
   "keywords": [
     "discord",
-    "bot"
+    "bot",
+    "moderation"
   ],
   "author": "gonzo#3813",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cluzier/treehouse-bot/issues"
   },
