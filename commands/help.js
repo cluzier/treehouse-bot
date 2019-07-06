@@ -1,44 +1,112 @@
-const Discord = require('discord.js');
-const n = require('../n.json');
+var Discord = require("discord.js");
+var client = new Discord.Client();
+var pageMenu = require("@quantiom/pagemenu");
+
 exports.run = (client, message, args) => {
-  function randomColor() {
-    var colors = ["#00F5FF", "#7FFFD4", "#008B45", "#FFD700", "#FF8000", "#FF0000", "#7FFF00", "#00BFFF", "	#000080", "#8A2BE2", "#FFB5C5", "#00FFF7", "#B120DF", "#DF2057", "#FFFFFF", "#B2FF00"];
-    var colorNum = Math.floor(Math.random()*colors.length);
-    return colors[colorNum];
-  }
-  const embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username + "#" + message.author.discriminator, `${message.author.avatarURL}`)
-  .setThumbnail(`${client.user.avatarURL}`)
-  .setTitle("Help | Commands")
-  .setDescription("Help for " + n.name)
-  .setColor(randomColor())
-  .addField("ping",
-    "Returns latency and websocket ping.")
-  .addField("info",
-    "Returns info about the bot, including uptime and a user count.")
-  .addField("help",
-    "Returns information about bot commands.")
-  .addField("bugreport",
-    "Submit a bug report for review. Example: >bugreport (reason)")
-  .addField("warn",
-    "Warns a user. Available to those able to kick users.")
-  .addField("ban",
-    "Bans a user. Available to those able to ban users.")
-  .addField("unban",
-    "Unban a user.")
-  .addField("kick",
-    "Kicks a user. Available to those able to kick users.")
-  .addField("tempmute",
-    "Mute a user for a specified amount of time.")
-  .addField("purge",
-    "Deletes a specified amount of messages. Available to those able to delete messages.")
-  .addField("serverinfo",
-    "Displays info about a server.")
-  .addField("userinfo",
-    "Displays info about a user.")
-  .addField("softban",
-    "Softbans a user, deleting messages from them for 7 days, then allowing them to immediately rejoin. Available to those able to ban users.")
-  .setFooter("coded by gonzo#3813")
-  .setTimestamp()
-  message.channel.send(embed);
+  let pMenu = new pageMenu(
+    message,
+    [
+      {
+        title: "Help | Commands - Page 1",
+        thumbnail: `${client.user.avatarURL}`,
+        color: "66cdaa", // green
+        footer: "coded by gonzo#3813",
+        fields: [
+          {
+            name: "ping",
+            value: "Returns latency and websocket ping.",
+            inline: true
+          },
+          {
+            name: "info",
+            value:
+              "Returns info about the bot, including uptime and a user count.",
+            inline: true
+          },
+          {
+            name: "help",
+            value: "Returns information about bot commands.",
+            inline: true
+          },
+          {
+            name: "bugreport",
+            value:
+              "Submit a bug report for review. Example: >bugreport (reason).",
+            inline: true
+          },
+          {
+            name: "warn",
+            value: "Warns a user. Available to those able to kick users.",
+            inline: true
+          }
+        ]
+      },
+      {
+        title: "Help | Commands - Page 2",
+        thumbnail: `${client.user.avatarURL}`,
+        color: "66cdaa", // green
+        footer: "coded by gonzo#3813",
+        fields: [
+          {
+            name: "ban",
+            value: "Bans a user. Available to those able to ban users.",
+            inline: true
+          },
+          {
+            name: "unban",
+            value: "Unban a user. Available to those able to ban users.",
+            inline: true
+          },
+          {
+            name: "kick",
+            value: "Kicks a user. Available to those able to kick users.",
+            inline: true
+          },
+          {
+            name: "tempmute",
+            value: "Mute a user for a specified amount of time.",
+            inline: true
+          },
+          {
+            name: "purge",
+            value:
+              "Deletes a specified amount of messages. Available to those able to delete messages.",
+            inline: true
+          }
+        ]
+      },
+      {
+        title: "Help | Commands - Page 3",
+        thumbnail: `${client.user.avatarURL}`,
+        color: "66cdaa", // green
+        footer: "coded by gonzo#3813",
+        fields: [
+          {
+            name: "serverinfo",
+            value: "Displays info about the server.",
+            inline: true
+          },
+          {
+            name: "userinfo",
+            value: "Displays info about a user.",
+            inline: true
+          },
+          {
+            name: "softban",
+            value:
+              "Softban a user, deleting messages from them for 7 days, then allowing them to immediately rejoin. Available to those able to ban users.",
+            inline: true
+          }
+        ]
+      }
+    ],
+    {
+      duration: 60000,
+      expireFunction: function(msg) {
+        msg.delete();
+      }
+    }
+  );
+
+  pMenu.run();
 };
