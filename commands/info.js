@@ -2,7 +2,6 @@ const human = require('humanize');
 const bytes = require('pretty-bytes');
 const Discord = require('discord.js');
 const n = require('../n.json');
-const version = require('../n.json');
 
 exports.run = (client, message, args) => {
   if(message.author.bot) return;

@@ -28,11 +28,7 @@
   "devDependencies": {
     "replace-in-file": "^3.4.4"
   },
-  "scripts": {
-    "test": "ping",
-    "build": "npm run tickVersion",
-    "tickVersion": "npm version patch && node version.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cluzier/treehouse-bot.git"
