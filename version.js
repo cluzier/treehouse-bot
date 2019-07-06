@@ -3,8 +3,7 @@ var package = require("./package.json");
 var buildVersion = package.version;
 const options = {
     files: [
-        'src/environments/environment.prod.ts',
-        'src/environments/environment.staging.ts',
+        'n.json'
     ],
     from: /version: '(.*)'/g,
     to: "version: '"+ buildVersion + "'",
