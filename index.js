@@ -23,4 +23,4 @@ var reload = (message, cmd) => {
     message.channel.send(`${cmd} reload successful.`)
   }
 exports.reload = reload;
-client.login(n.token);
+client.login(process.env.token);
