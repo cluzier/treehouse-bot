@@ -20,6 +20,7 @@
     "profanities": "^2.11.0",
     "quick.db": "^7.0.0-b21",
     "request": "2.81.0",
+    "say": "^0.16.0",
     "sqlite": "^3.0.3",
     "steam-provider": "^0.3.2",
     "unfluff": "^3.2.0",

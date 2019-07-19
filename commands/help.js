@@ -46,13 +46,8 @@ exports.run = (client, message, args) => {
         color: "66cdaa", // green
         fields: [
           {
-            name: "ban",
-            value: "Bans a user. Available to those able to ban users.",
-            inline: true
-          },
-          {
-            name: "unban",
-            value: "Unban a user. Available to those able to ban users.",
+            name: "warnlvl",
+            value: "Check a user's warning level. Available to those able to kick users.",
             inline: true
           },
           {
@@ -66,9 +61,13 @@ exports.run = (client, message, args) => {
             inline: true
           },
           {
-            name: "purge",
-            value:
-              "Deletes a specified amount of messages. Available to those able to delete messages.",
+            name: "ban",
+            value: "Bans a user. Available to those able to ban users.",
+            inline: true
+          },
+          {
+            name: "unban",
+            value: "Unban a user. Available to those able to ban users.",
             inline: true
           }
         ]
@@ -92,6 +91,12 @@ exports.run = (client, message, args) => {
             name: "softban",
             value:
               "Softban a user, deleting messages from them for 7 days, then allowing them to immediately rejoin. Available to those able to ban users.",
+            inline: true
+          },
+          {
+            name: "purge",
+            value:
+              "Deletes a specified amount of messages. Available to those able to delete messages.",
             inline: true
           }
         ]

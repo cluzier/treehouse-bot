@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const say = require('say')
 const n = require('../n.json');
 const human = require("humanize");
 let time = new Date();
@@ -10,5 +11,5 @@ function amPm() {
 module.exports = client => {
   console.log(chalk.bgGreen.black(n.name + " is ready at " + human.date('m-d-y | h:i:s', client.readyAt) + " " + amPm() + ". Version " + n.version + ". Prefix: " + n.prefix + "."));
   client.user.setStatus('online');
-  client.user.setActivity(n.dGame);
+  client.user.setActivity('>help');
 }

@@ -33,9 +33,10 @@ client.on("message", (message) => {
     "So no head": "no " + message.author + ", no head"
   };
 
-  if(responseObject[message.content]) {
+  if (responseObject[message.content]) {
     message.channel.send(responseObject[message.content]);
   }
+
 });
 
 exports.reload = reload;

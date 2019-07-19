@@ -1,24 +1,37 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+const ms = require("ms");
+let warns = require('../warnings.json');
 
 module.exports.run = async (bot, message, args) => {
 
-  if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("You don't have `MANAGE_MEMBERS` permissions.");
-  let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-  if(!wUser) return message.reply("Couldn't find the user.");
-  let warnlevel = warns[wUser.id].warns;
+	let wUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	if(!wUser) return message.channel.send(":x:" + " ***I couldn't find this user***").then(m => {
+	}); 
 
-  let embed = new Discord.RichEmbed()
-  .setTitle("Warnings")
-  .addField("User", wUser.user.tag)
-  .addField("Moderator", message.author.tag)
-  .addField("Number of Warnings", `${warnlevel}`)
-  .setColor("#f4b342")
-  message.channel.send(embed);
-
-}
+	let warnlevel = warns[wUser.id].warns;
+	
+	if(warnlevel, (err) => {
+		if(warnlevel === 1) return message.channel.send({embed: {
+			color: 15105570,
+			description: `<@${wUser.id}> has 0 warnings`
+		}});
+	});
+		
+	
+	if(warnlevel === 1) return message.channel.send({embed: {
+		color: 15105570,
+		description: `<@${wUser.id}> has 1 warning`
+	}});
+	
+	let warnlvlEmbed = new Discord.RichEmbed()
+		.setColor("#FFA500")
+		.setDescription(`<@${wUser.id}> has ${warnlevel} warnings`);
+		
+	message.channel.send(warnlvlEmbed);
+	
+};
 
 module.exports.help = {
-  name: "warnlvl"
+	name: "warnings",
 }
