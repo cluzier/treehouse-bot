@@ -1,7 +1,9 @@
 require("events").EventEmitter.prototype._maxListeners = 100;
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const fs = require('fs');
 const n = require("./n.json");
+const kills = require('./killed.json');
 const now = require("performance-now");
 const prettyBytes = require("pretty-bytes");
 const chalk = require("chalk");

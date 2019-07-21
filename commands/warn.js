@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
   if (!warnchannel) return message.channel.send("Couldn't find `mod-log` channel**");
   warnchannel.send(warnEmbed);
   wUser.send(warnEmbed);
-  message.channel.send("That user has been warned. fkin idiot")
+  message.channel.send("That user has been warned.")
 
 
 }
