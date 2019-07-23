@@ -26,20 +26,21 @@ var reload = (message, cmd) => {
   message.channel.send(`${cmd} reload successful.`);
 };
 
-var nohead = ["so no head", "So no head", "so no head?", "So no head?"];
-
 client.on("message", (message) => {
 
-  const responseObject = {
-    "so no head": "no " + message.author + ", no head",
-    "So no head": "no " + message.author + ", no head"
-  };
+    const responseObject = {
+      "so no head": "no " + message.author + ", no head",
+      "So no head": "no " + message.author + ", no head",
+      "SO NO HEAD": "no " + message.author + ", no head"
+    };
 
-  if (responseObject[message.content]) {
-    message.channel.send(responseObject[message.content]);
-  }
+    if (responseObject[message.content]) {
+      message.channel.send(responseObject[message.content]);
+    }
 
-});
+  }),
+
+// welcome function here
 
 exports.reload = reload;
 client.login(n.token);

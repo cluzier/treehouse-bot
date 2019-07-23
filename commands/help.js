@@ -5,21 +5,19 @@ var pageMenu = require("@quantiom/pagemenu");
 exports.run = (client, message, args) => {
   let pMenu = new pageMenu(
     message,
-    [
-      {
-        title: "Help | Commands - Page 1",
+    [{
+        title: "Help | Commands",
+        description: "Page 1",
         thumbnail: `${client.user.avatarURL}`,
         color: "66cdaa", // green
-        fields: [
-          {
+        fields: [{
             name: "ping",
             value: "Returns latency and websocket ping.",
             inline: true
           },
           {
             name: "info",
-            value:
-              "Returns info about the bot, including uptime and a user count.",
+            value: "Returns info about the bot, including uptime and a user count.",
             inline: true
           },
           {
@@ -29,30 +27,29 @@ exports.run = (client, message, args) => {
           },
           {
             name: "bugreport",
-            value:
-              "Submit a bug report for review. Example: >bugreport (reason).",
+            value: "Submit a bug report for review. Example: >bugreport (reason).",
             inline: true
           },
           {
             name: "warn",
-            value: "Warns a user. Available to those able to kick users.",
+            value: "Warns a user.",
             inline: true
           }
         ]
       },
       {
-        title: "Help | Commands - Page 2",
+        title: "Help | Commands",
+        description: "Page 2",
         thumbnail: `${client.user.avatarURL}`,
         color: "66cdaa", // green
-        fields: [
-          {
+        fields: [{
             name: "warnlvl",
-            value: "Check a user's warning level. Available to those able to kick users.",
+            value: "Check a user's warning level.",
             inline: true
           },
           {
             name: "kick",
-            value: "Kicks a user. Available to those able to kick users.",
+            value: "Kicks a user.",
             inline: true
           },
           {
@@ -62,22 +59,22 @@ exports.run = (client, message, args) => {
           },
           {
             name: "ban",
-            value: "Bans a user. Available to those able to ban users.",
+            value: "Bans a user.",
             inline: true
           },
           {
             name: "unban",
-            value: "Unban a user. Available to those able to ban users.",
+            value: "Unban a user.",
             inline: true
           }
         ]
       },
       {
-        title: "Help | Commands - Page 3",
+        title: "Help | Commands",
+        description: "Page 3",
         thumbnail: `${client.user.avatarURL}`,
         color: "66cdaa", // green
-        fields: [
-          {
+        fields: [{
             name: "serverinfo",
             value: "Displays info about the server.",
             inline: true
@@ -89,22 +86,52 @@ exports.run = (client, message, args) => {
           },
           {
             name: "softban",
-            value:
-              "Softban a user, deleting messages from them for 7 days, then allowing them to immediately rejoin. Available to those able to ban users.",
+            value: "Softban a user, deleting messages from them for 7 days, then allowing them to immediately rejoin.",
             inline: true
           },
           {
             name: "purge",
-            value:
-              "Deletes a specified amount of messages. Available to those able to delete messages.",
+            value: "Deletes a specified amount of messages.",
+            inline: true
+          },
+          {
+            name: "lockdown",
+            value: "Lock a channel for a specified amount of time.",
+            inline: true
+          },
+        ]
+      },
+      {
+        title: "Help | Commands",
+        description: "Page 4",
+        thumbnail: `${client.user.avatarURL}`,
+        color: "66cdaa", // green
+        fields: [{
+            name: "kill",
+            value: "Kill a user or yourself. Counts how many kills per user.",
+            inline: true
+          },
+          {
+            name: "hug",
+            value: "Hug a user, counts how many hugs per user.",
+            inline: true
+          },
+          {
+            name: "meme",
+            value: "Generates a ranom meme from /r/dankmemes.",
+            inline: true
+          },
+          {
+            name: "pewds",
+            value: "Generates a random meme from /r/pewdiepie.",
             inline: true
           }
         ]
-      }
-    ],
-    {
+      },
+
+    ], {
       duration: 60000,
-      expireFunction: function(msg) {
+      expireFunction: function (msg) {
         msg.delete();
       }
     }

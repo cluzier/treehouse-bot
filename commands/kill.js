@@ -20,8 +20,7 @@ exports.run = (client, message, args) => {
       .setImage('https://i.imgur.com/7MkzxTT.gif')
 
     message.channel.send(emb);
-    // message.channel.send(`${message.author} killed ${target.tag} 🔪`)
-    // message.channel.send(`${target.tag} has been killed for the first time!`);
+
   } else {
     deathCount = (kills[id] = kills[id] + 1);
 
@@ -31,8 +30,7 @@ exports.run = (client, message, args) => {
       .setImage('https://i.imgur.com/7MkzxTT.gif')
 
     message.channel.send(emb);
-    // message.channel.send(`${message.author} killed ${target.tag} 🔪`)
-    // message.channel.send(`${target.tag} has been killed ${deathCount} times!`);
+
   }
 
   // Update kills file
