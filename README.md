@@ -90,6 +90,8 @@ treehouse-bot
 │
 ├─── .DS_Store
 ├─── .env
+├─── .gitignore
+├─── CODE_OF_CONDUCT.md
 ├─── 
 ├─── hugged.json
 ├─── index.js
