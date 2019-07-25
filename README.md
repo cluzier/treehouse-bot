@@ -92,11 +92,11 @@ treehouse-bot
 ├─── .env
 ├─── .gitignore
 ├─── CODE_OF_CONDUCT.md
+├─── LICENSE
 ├─── 
 ├─── hugged.json
 ├─── index.js
 ├─── killed.json
-├─── LICENSE
 ├─── package.json
 ├─── package-lock.json
 ├─── procfile
