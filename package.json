@@ -20,6 +20,7 @@
     "humanize": "0.0.9",
     "klasa": "^0.4.0",
     "lowdb": "^1.0.0",
+    "moment": "^2.24.0",
     "node-gyp": "^5.0.3",
     "node-opus": "^0.3.2",
     "nodemon": "^1.17.5",
