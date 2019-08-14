@@ -50,21 +50,21 @@ client.on("ready", () => {
             })
         }
 
-        if(message.content === "bruh") {
-            message.react("581985971478986772")
-         }
+        // if(message.content === "bruh") {
+        //     message.react("581985971478986772")
+        //  }
 
-         if(message.content === "hi") {
-             message.react("581985199215083532")
-         }
+        //  if(message.content === "hi") {
+        //      message.react("581985199215083532")
+        //  }
 
-         if(message.content === "jay") {
-             message.react("581985971478986772")
-         }
+        //  if(message.content === "jay") {
+        //      message.react("581985971478986772")
+        //  }
 
-         if(message.content === "kry") {
-             message.react("580083352284168218")
-         }
+        //  if(message.content === "kry") { 
+        //      message.react("580083352284168218")
+        //  }
 
         // REACT TO EVERY MESSAGE WITH VOTE
         //   let up = "👍"
