@@ -20,7 +20,7 @@ const ms = require("ms");
       }).then(() => {
         var liftedembed = new Discord.RichEmbed()
         .setTitle('🔒 Lockdown')
-        .setDescription("🔓 Loockdown lifted.")  
+        .setDescription("🔓 Lockdown lifted.")  
         .setColor('36393e')
         message.channel.send(liftedembed);
         clearTimeout(bot.lockit[message.channel.id]);
@@ -42,7 +42,7 @@ const ms = require("ms");
           bot.lockit[message.channel.id] = setTimeout(() => {
             var liftedembed = new Discord.RichEmbed()
             .setTitle('🔒 Lockdown')
-            .setDescription("🔓 Loockdown lifted.")  
+            .setDescription("🔓 Lockdown lifted.")  
             .setColor('36393e') 
             message.channel.overwritePermissions(message.guild.id, {
               SEND_MESSAGES: null
